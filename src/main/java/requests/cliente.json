@@ -1,0 +1,58 @@
+Exemplo de requisições de Cliente
+
+*****************************************************************************
+Cadastrar Cliente
+POST http://127.0.0.1:8080/cliente/salvar
+
+Body:
+{
+  "nome": "Yudi",
+  "telefone": "4002-8922"
+}
+
+Returns:
+{
+  "id": "1",
+  "nome": "Yudi",
+  "telefone": "4002-8922"
+}
+
+*****************************************************************************
+Buscar Cliente
+GET http://127.0.0.1:8080/cliente/{id}
+
+GET http://127.0.0.1:8080/cliente/1 returns:
+
+{
+  "id": "1",
+  "nome": "Yudi",
+  "telefone": "4002-8922"
+}
+
+*****************************************************************************
+
+Listar todos os Clientes
+
+GET http://127.0.0.1:8080/cliente/listar
+
+Returns:
+[
+  {
+    "id": "1",
+    "nome": "Yudi",
+    "telefone": "4002-8922"
+  },
+  {
+    "id": "2",
+    "nome": "Priscila",
+    "telefone": "4002-8922"
+  }
+]
+
+*****************************************************************************
+Deletar Cliente
+DELETE http://127.0.0.1:8080/cliente/{id}
+
+DELETE http://127.0.0.1:8080/cliente/1 returns:
+
+"Cliente Deletado com Sucesso"

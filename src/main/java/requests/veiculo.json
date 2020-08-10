@@ -1,0 +1,76 @@
+Exemplo de requisições de Veiculo
+
+*****************************************************************************
+Cadastrar Veiculo
+POST http://127.0.0.1:8080/veiculo/salvar
+
+Body:
+{
+  "placa": "CNK 80Q3",
+   "cor": "Preto",
+  "modelo": "Chevrolet Impala",
+  "anoFabricacao": "1967",
+  "anoModelo": "1967",
+  "motor": "7.0",
+  "cliente": {
+    "id" : "5"
+  }
+}
+
+Returns:
+{
+  "id":"2"
+  "placa": "CNK 80Q3",
+  "cor": "Preto",
+  "modelo": "Chevrolet Impala",
+  "anoFabricacao": "1967",
+  "anoModelo": "1967",
+  "motor": "7.0",
+  "cliente": {
+    "id" : "5"
+  }
+}
+
+*****************************************************************************
+Buscar Veiculo
+GET http://127.0.0.1:8080/veiculo/{id}
+
+GET http://127.0.0.1:8080/veiculo/2 returns:
+
+{
+"id":"2"
+"placa": "CNK 80Q3",
+"cor": "Preto",
+"modelo": "Chevrolet Impala",
+"anoFabricacao": "1967",
+"anoModelo": "1967",
+"motor": "7.0",
+"cliente": {
+"id" : "5"
+}
+}
+
+*****************************************************************************
+
+Listar todos os Veiculos
+
+GET http://127.0.0.1:8080/veiculo/listar
+
+Retorna todos os veiculos, independente do Cliente
+
+*****************************************************************************
+
+Listar todos os Veiculos do Cliente X
+
+GET http://127.0.0.1:8080/veiculo/listar/{id}
+GET http://127.0.0.1:8080/veiculo/listar/1
+
+Retorna todos os veiculos do Cliente 1
+
+*****************************************************************************
+Deletar Veiculos
+DELETE http://127.0.0.1:8080/veiculo/{id}
+
+DELETE http://127.0.0.1:8080/veiculo/1 returns:
+
+"Veiculo Deletado com Sucesso"

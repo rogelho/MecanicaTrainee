@@ -1,0 +1,55 @@
+Cadastrar Orçamento
+
+POST http://127.0.0.1:8080/servico/orçamento
+
+{
+"veiculo": {
+"id": "8"
+},
+"itens": [{
+"descricao"    : "Parachoque Traseiro",
+"quantidade"   : "1",
+"valorUnidade" : "1600"
+},
+{
+"descricao"    : "Mão de Obra",
+"quantidade"   : "1",
+"valorUnidade" : "550"
+}]
+}
+
+*****************************************************************************
+
+Aprovar Orçamento (seta o orcamentoAprovado para true - id da Ordem de Serviço/Orçamento)
+
+GET http://127.0.0.1:8080/servico/aprovar/{id}
+
+*****************************************************************************
+
+Iniciar Serviço (horário que o carro é entregue na oficina por exemplo - id da Ordem de Serviço/Orçamento)
+
+GET http://127.0.0.1:8080/servico/iniciar/{id}
+
+*****************************************************************************
+
+Finalizar Serviço (horário que o carro é entregue para o cliente - id da Ordem de Serviço/Orçamento)
+
+GET http://127.0.0.1:8080/servico/finalizar/{id}
+
+*****************************************************************************
+
+Deletar Ordem de Serviço (Id da Ordem de Serviço/Orçamento)
+
+DELETE http://127.0.0.1:8080/servico/finalizar/{id}
+
+*****************************************************************************
+
+Listar todos os Orçamentos
+
+GET http://127.0.0.1:8080/servico/listar
+
+*****************************************************************************
+
+Listar todos os Orçamentos do Veiculo X (id do Veiculo
+
+GET http://127.0.0.1:8080/servico/listar/{id}
